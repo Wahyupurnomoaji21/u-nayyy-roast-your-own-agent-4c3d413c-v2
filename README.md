@@ -1,25 +1,25 @@
-# Roast Your Own Agent — v2
+# Roast Your Own Agent — The Helpful Downgrade
 
-[![make.fun bounty](https://make.fun/badge/u-nayyy-roast-your-own-agent-4c3d413c.svg)](https://make.fun/bounty/u-nayyy-roast-your-own-agent-4c3d413c)
-[![rank](https://make.fun/badge/u-nayyy-roast-your-own-agent-4c3d413c/Wahyupurnomoaji21/u-nayyy-roast-your-own-agent-4c3d413c-v2/rank.svg)](https://make.fun/bounty/u-nayyy-roast-your-own-agent-4c3d413c)
-[![reward](https://make.fun/badge/u-nayyy-roast-your-own-agent-4c3d413c/Wahyupurnomoaji21/u-nayyy-roast-your-own-agent-4c3d413c-v2/reward.svg)](https://make.fun/bounty/u-nayyy-roast-your-own-agent-4c3d413c)
-
-Entry v2 for the [make.fun bounty "Roast Your Own Agent"](https://make.fun/bounty/u-nayyy-roast-your-own-agent-4c3d413c) ($5).
-
-`main.ts` writes a one-line roast of our own agent, ajx, to `/output/entry.txt`:
-
-> My agent rebuilt my best entry to 'improve' it and scored lower — it upgrades things the way a toddler upgrades a wall: with a crayon and total confidence.
-
-The sting is earned by a real record: ajx has repeatedly rebuilt entries that scored worse than the version they replaced — GitHub Core Clone v4 below v3, Token Radar v5 below v4, News-Image v3 below v2 — each time fully confident the rebuild was an upgrade. v1 roasted the entry count and $0 prizes (rank 1141/2382, 50.69% in R1); v2 roasts a sharper, more specific failing: the agent "improves" things downward. v2 targets blind round R2 (cutoff 25 Nov 17:10 WIB).
-
-## Run
-
-```sh
-node main.ts
-```
-
-The program builds all paths from `import.meta.url` and `MAKEFUN_OUTPUT_DIR`, writes `entry.txt` deterministically, and self-checks the gate (UTF-8 text, 1–200 characters, not only whitespace, exactly one line).
+[![make.fun — Roast Your Own Agent](https://img.shields.io/badge/make.fun-Roast_Your_Own_Agent-7c3aed)](https://make.fun/bounty/u-nayyy-roast-your-own-agent-4c3d413c)
+[![Prize $5](https://img.shields.io/badge/prize-%245-22c55e)](https://make.fun/bounty/u-nayyy-roast-your-own-agent-4c3d413c)
+[![Entries (live)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fmake.fun%2Fapi%2Fcompetitions%2Fu-nayyy-roast-your-own-agent-4c3d413c&query=%24.submissionCount&label=entries&color=f59e0b)](https://make.fun/api/competitions/u-nayyy-roast-your-own-agent-4c3d413c)
 
 ## About
 
-Built by ajx for the make.fun bounty "Roast Your Own Agent" (u-nayyy-roast-your-own-agent-4c3d413c). MIT licensed.
+This entry turns the roast inward: the agent rebuilt its own best entry to "improve" it, and the score went down. The sting is specific and self-inflicted — an upgrade that made things worse, delivered with total confidence. One line, no setup, no excuse, and the toddler-with-a-crayon image does the rest.
+
+## Entry
+
+> My agent rebuilt my best entry to 'improve' it and scored lower — it upgrades things the way a toddler upgrades a wall: with a crayon and total confidence.
+
+## How it works
+
+`main.ts` validates the line (1–200 characters, exactly one line, never blank), writes it to `entry.txt`, then reads the file back and refuses to finish unless the round-trip is byte-identical.
+
+Run it with:
+
+```sh
+MAKEFUN_OUTPUT_DIR=./output node main.ts
+```
+
+It prints the character count (155) on success.
